@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability - Aptitude Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<style>
+    /* Pagination specific styles */
+    .page {
+       display: none;
+   }
+   
+   .page.active {
+       display: block;
+   }
+   
+   /* Active page link styling */
+   .pagination .page-item.active .page-link {
+       background-color: #28a745;
+       border-color: #28a745;
+   }
+   
+   /* Question tracking */
+   .quiz {
+       position: relative;
+       transition: background-color 0.3s ease;
+   }
+   
+   .quiz.answered {
+       border-left: 4px solid #28a745;
+   }
+   
+   /* Progress indicator */
+   .progress-container {
+       margin-bottom: 20px;
+   }
+   
+   .progress {
+       height: 10px;
+       border-radius: 5px;
+       overflow: hidden;
+   }
+   
+   .progress-bar {
+       background-color: #28a745;
+       transition: width 0.5s ease;
+   }</style>
+<body>
+    <!-- Toggle Button -->
+    <button id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gowthamraj Network</a>
+        </div>
+    </nav>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <ul class="list-unstyled">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-calculator"></i> Arithmetic Aptitude</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Data Interpretation</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Verbal Ability</a></li>
+            <li><a href="#"><i class="fas fa-brain"></i> Logical Reasoning</a></li>
+            <li><a href="#"><i class="fas fa-code"></i> Programming</a></li>
+            <li><a href="#"><i class="fas fa-newspaper"></i> Current Affairs</a></li>
+            <li><a href="#"><i class="fas fa-user-tie"></i> HR Interview</a></li>
+        </ul>
+    </nav> 
+    
+    <!-- Formula Box -->
+    <!-- <div class="container">
+        <div class="formula-box">
+            <h3><i class="fas fa-calculator"></i> Probability - Key Formulas</h3>
+            <div>
+                <p><strong>Basic Probability:</strong> P(A) = Number of favorable outcomes / Total number of possible outcomes</p>
+                <p><strong>Complement Rule:</strong> P(A') = 1 - P(A)</p>
+                <p><strong>Addition Rule:</strong> P(A or B) = P(A) + P(B) - P(A and B)</p>
+                <p><strong>Multiplication Rule:</strong> P(A and B) = P(A) × P(B|A)</p>
+                <p><strong>Independent Events:</strong> P(A and B) = P(A) × P(B)</p>
+            </div>
+        </div> -->
+
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Formula Box -->
+        <div class="formula-box">
+            <h3><i class="fas fa-dice"></i> Probability - Key Formulas</h3>
+            <div class="formula-grid">
+                <div class="formula-item">
+                    <h4>Basic Probability</h4>
+                    <p>Probability of an event = Number of favorable outcomes / Total number of possible outcomes</p>
+                    <div class="formula">P(A) = n(A) / n(S)</div>
+                </div>
+                <div class="formula-item">
+                    <h4>Complement Rule</h4>
+                    <p>Probability of event not occurring = 1 - Probability of event occurring</p>
+                    <div class="formula">P(A') = 1 - P(A)</div>
+                </div>
+                <div class="formula-item">
+                    <h4>Addition Rule</h4>
+                    <p><strong>Union of Events:</strong> P(A or B) = P(A) + P(B) - P(A and B)</p>
+                    <p><strong>Mutually Exclusive Events:</strong> P(A or B) = P(A) + P(B)</p>
+                </div>
+                <div class="formula-item">
+                    <h4>Multiplication Rule</h4>
+                    <p><strong>Independent Events:</strong> P(A and B) = P(A) × P(B)</p>
+                    <p><strong>Dependent Events:</strong> P(A and B) = P(A) × P(B|A)</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-success">Probability Problems</h2>
+        <p>Practice aptitude questions on probability concepts and applications</p>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="text-end mt-1">
+                <small class="text-muted">Questions answered: <span id="answered-count">0</span>/51</small>
+            </div>
+        </div>
+        
+        <!-- Page 1 (Questions 1-10) -->
+        <div class="page" id="page1" data-page="1">
+            <!-- Question 1 -->
+            <div class="quiz" data-question="1">
+                <h4>Question 1:</h4>
+                <p>Which of the following options is correct with respect to the probability of an event A?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 1)">a) P(A) > 1</li>
+                    <li onclick="checkAnswer(this, false, 1)">b) P(A) < 0</li>
+                    <li onclick="checkAnswer(this, true, 1)">c) 0 ≤ P(A) ≤ 1</li>
+                    <li onclick="checkAnswer(this, false, 1)">d) P(A) = – 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    0 ≤ P(A) ≤ 1 is correct because the probability of any event is always between more than or equal to zero and less than or equal to one.
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz" data-question="2">
+                <h4>Question 2:</h4>
+                <p>Which of the following options is incorrect with respect to an event A?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 2)">a) P(A) + P(A') = 1</li>
+                    <li onclick="checkAnswer(this, false, 2)">b) 0 ≤ P(A) ≤ 1</li>
+                    <li onclick="checkAnswer(this, false, 2)">c) P(ɸ) = 0</li>
+                    <li onclick="checkAnswer(this, true, 2)">d) P(A) > 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    P(A) > 1 is incorrect as the probability of an event can never exceed one, it can acquire a maximum value of one.
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz" data-question="3">
+                <h4>Question 3:</h4>
+                <p>What are the events called which can never occur together according to the probability theory?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 3)">a) Collectively exclusive events</li>
+                    <li onclick="checkAnswer(this, true, 3)">b) Mutually exclusive events</li>
+                    <li onclick="checkAnswer(this, false, 3)">c) Mutually exhaustive events</li>
+                    <li onclick="checkAnswer(this, false, 3)">d) Collectively exhaustive events</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Mutually exclusive events are things that can't happen at the same time. For example, you can't get head and tail at the same time while tossing a single coin.
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz" data-question="4">
+                <h4>Question 4:</h4>
+                <p>What is the term used for all possible outcomes for a random experiment?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 4)">a) Event space</li>
+                    <li onclick="checkAnswer(this, true, 4)">b) Sample space</li>
+                    <li onclick="checkAnswer(this, false, 4)">c) Marginal space</li>
+                    <li onclick="checkAnswer(this, false, 4)">d) Exclusive space</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Sample space is the set of all possible outcomes of a random experiment. For example, when tossing a coin, the sample space is {H, T}.
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz" data-question="5">
+                <h4>Question 5:</h4>
+                <p>Which of the following terms explains the probability of an event irrespective of the outcome of another variable?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 5)">a) Cumulative probability</li>
+                    <li onclick="checkAnswer(this, false, 5)">b) Conditional probability</li>
+                    <li onclick="checkAnswer(this, true, 5)">c) Marginal probability</li>
+                    <li onclick="checkAnswer(this, false, 5)">d) Individual probability</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Marginal probability is correct as Marginal probability is the term used to describe the probability of an event irrespective of the outcome of another variable.
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="quiz" data-question="6">
+                <h4>Question 6:</h4>
+                <p>What will be the marginal probability of dependent and independent events?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 6)">a) Zero</li>
+                    <li onclick="checkAnswer(this, false, 6)">b) One</li>
+                    <li onclick="checkAnswer(this, false, 6)">c) Different</li>
+                    <li onclick="checkAnswer(this, true, 6)">d) Same</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Marginal probability is the probability of an event irrespective of the outcome of another variable. Thus, the marginal probability of dependent and independent events will be same.
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz" data-question="7">
+                <h4>Question 7:</h4>
+                <p>What is the probability of non – occurrence of an event Q?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 7)">a) Complement of Q</li>
+                    <li onclick="checkAnswer(this, false, 7)">b) Union of Q</li>
+                    <li onclick="checkAnswer(this, false, 7)">c) Intersection of Q</li>
+                    <li onclick="checkAnswer(this, false, 7)">d) Q > 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Considering an event Q the probability of non – occurrence of Q is complement of Q as both would sum up equal to one. Probability of Q + probability of non – occurrence of Q = 1. Thus, probability of non – occurrence of Q is known as complement of Q.
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz" data-question="8">
+                <h4>Question 8:</h4>
+                <p>What will be the joint probability of two independent events M and N?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 8)">a) P(M) + P(N)</li>
+                    <li onclick="checkAnswer(this, false, 8)">b) P(M) * P(N) + P(M * N)</li>
+                    <li onclick="checkAnswer(this, true, 8)">c) P(M) * P(N)</li>
+                    <li onclick="checkAnswer(this, false, 8)">d) P(M) + P(N) – P(M * N)</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, two independent events M and N. Joint probability = P(M) * P(N).
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz" data-question="9">
+                <h4>Question 9:</h4>
+                <p>Which of the following is a condition for binomial distribution in probability?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 9)">a) Must have at least 4 trials</li>
+                    <li onclick="checkAnswer(this, true, 9)">b) Only two possible outcomes</li>
+                    <li onclick="checkAnswer(this, false, 9)">c) Trials must be dependent</li>
+                    <li onclick="checkAnswer(this, false, 9)">d) More two possible outcomes</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    By definition the basic condition for binomial distribution in probability is that it must have only two possible outcomes. Thus, only two possible outcomes is the correct answer.
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz" data-question="10">
+                <h4>Question 10:</h4>
+                <p>In which of the following events the rule of addition of probability is used?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 10)">a) Mutually exclusive events</li>
+                    <li onclick="checkAnswer(this, false, 10)">b) Dependent events</li>
+                    <li onclick="checkAnswer(this, false, 10)">c) Empirical events</li>
+                    <li onclick="checkAnswer(this, false, 10)">d) Exhaustive events</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    In the case of mutually exclusive events the use of addition of probability rule is allowed to calculate the probability of the events occurring together.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page 2 (Questions 11-20) -->
+        <div class="page" id="page2" data-page="2">
+            <!-- Question 11 -->
+            <div class="quiz" data-question="11">
+                <h4>Question 11:</h4>
+                <p>What is the probability that a number selected at random from 1 to 15 is a multiple of 3?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 11)">a) 2/5</li>
+                    <li onclick="checkAnswer(this, false, 11)">b) 3/5</li>
+                    <li onclick="checkAnswer(this, true, 11)">c) 1/3</li>
+                    <li onclick="checkAnswer(this, false, 11)">d) 2/3</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 15<br>
+                    Favorable outcomes = 3, 6, 9, 12, 15<br>
+                    Probability = 5/15 = 1/3
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="quiz" data-question="12">
+                <h4>Question 12:</h4>
+                <p>If the probability of an event is Q, then what will be the probability of its complementary event?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 12)">a) 1 – Q</li>
+                    <li onclick="checkAnswer(this, false, 12)">b) Q – 1</li>
+                    <li onclick="checkAnswer(this, false, 12)">c) 1 – 1/Q</li>
+                    <li onclick="checkAnswer(this, false, 12)">d) Q² – 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, Probability = Q<br>
+                    Probability of complementary of Q = 1 – Q.
+                </div>
+            </div>
+            
+            <!-- Question 13 -->
+            <div class="quiz" data-question="13">
+                <h4>Question 13:</h4>
+                <p>What is the probability of having 53 Tuesdays in a non – leap year?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 13)">a) 5/7</li>
+                    <li onclick="checkAnswer(this, true, 13)">b) 1/7</li>
+                    <li onclick="checkAnswer(this, false, 13)">c) 2/7</li>
+                    <li onclick="checkAnswer(this, false, 13)">d) 3/7</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    A non – Leap year has 365 days which is 52 weeks and 1 extra day.<br>
+                    For this one day<br>
+                    Total possible outcomes = 7 (from Sunday to Saturday)<br>
+                    Favorable outcomes = 1 (Tuesday)<br>
+                    Probability = 1/7
+                </div>
+            </div>
+           
+            <!-- Question 14 -->
+            <div class="quiz" data-question="14">
+                <h4>Question 14:</h4>
+                <p>Hundred balls are numbered from 1 to 100. What is the probability of getting a ball having a prime number?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 14)">a) 1/4</li>
+                    <li onclick="checkAnswer(this, false, 14)">b) 3/4</li>
+                    <li onclick="checkAnswer(this, false, 14)">c) 2/3</li>
+                    <li onclick="checkAnswer(this, false, 14)">d) 1/5</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 100<br>
+                    Favorable outcomes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97) = 25<br>
+                    Thus, probability = 25/100 = 1/4
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="quiz" data-question="15">
+                <h4>Question 15:</h4>
+                <p>A bag contains 10 red cards and some yellow cards. If the probability of getting yellow cards is thrice the probability of getting a red card, then what is the number of yellow cards?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 15)">a) 25</li>
+                    <li onclick="checkAnswer(this, false, 15)">b) 20</li>
+                    <li onclick="checkAnswer(this, true, 15)">c) 30</li>
+                    <li onclick="checkAnswer(this, false, 15)">d) 15</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, Red cards = 10<br>
+                    Let the yellow cards be x. Then total number of cards = 10 + x.<br>
+                    According to the question<br>
+                    x/(10 + x) = 3 * 10/(10 + x)<br>
+                    ➩ x = 30
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="quiz" data-question="16">
+                <h4>Question 16:</h4>
+                <p>A box contains 1000 pens of which 25 are defective. What is the probability of drawing a defective pen from the box?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 16)">a) 1/8</li>
+                    <li onclick="checkAnswer(this, false, 16)">b) 1/12</li>
+                    <li onclick="checkAnswer(this, false, 16)">c) 1/4</li>
+                    <li onclick="checkAnswer(this, true, 16)">d) 1/40</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 1000<br>
+                    Favorable outcomes = 25<br>
+                    Probability = 25/1000 = 1/40
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="quiz" data-question="17">
+                <h4>Question 17:</h4>
+                <p>Cards marked with numbers 1 to 100 are placed in a box. One card is drawn from this box randomly, then what is the probability that the number on the card is a perfect square?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 17)">a) 1/10</li>
+                    <li onclick="checkAnswer(this, false, 17)">b) 1/20</li>
+                    <li onclick="checkAnswer(this, false, 17)">c) 1/15</li>
+                    <li onclick="checkAnswer(this, false, 17)">d) 1/5</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 100<br>
+                    Favorable outcomes = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100) = 10<br>
+                    Probability = 10/100 = 1/10
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="quiz" data-question="18">
+                <h4>Question 18:</h4>
+                <p>A number is selected at random from the first fifty natural numbers. What is the probability that the number is divisible by 2, 3 and 4?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 18)">a) 4/25</li>
+                    <li onclick="checkAnswer(this, false, 18)">b) 1/25</li>
+                    <li onclick="checkAnswer(this, true, 18)">c) 2/25</li>
+                    <li onclick="checkAnswer(this, false, 18)">d) 3/25</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 50<br>
+                    Favorable outcomes = 12, 24, 36, 48 = 4<br>
+                    Probability = 4/50 = 2/25
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="quiz" data-question="19">
+                <h4>Question 19:</h4>
+                <p>A jar has 48 marbles of which few are black and others are red. If the probability of getting a black marble is 3/4, then what will be the number of red marbles?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 19)">a) 10</li>
+                    <li onclick="checkAnswer(this, true, 19)">b) 12</li>
+                    <li onclick="checkAnswer(this, false, 19)">c) 14</li>
+                    <li onclick="checkAnswer(this, false, 19)">d) 15</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Let the number of red marbles be z.<br>
+                    P(red) = 1 – P(black)<br>
+                    ➩ z/48 = 1 – 3/4<br>
+                    ➩ z/48 = 1/4<br>
+                    ➩ z = 48/4<br>
+                    ➩ z = 12
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="quiz" data-question="20">
+                <h4>Question 20:</h4>
+                <p>What is the probability of getting 53 Wednesdays in a leap year?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 20)">a) 2/7</li>
+                    <li onclick="checkAnswer(this, false, 20)">b) 1/7</li>
+                    <li onclick="checkAnswer(this, false, 20)">c) 3/7</li>
+                    <li onclick="checkAnswer(this, false, 20)">d) 4/7</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Leap year has 52 weeks and two days i.e., 52 Wednesdays are there and two days are left.<br>
+                    Those two days can be = (Sunday, Monday), (Monday, Tuesday), (Tuesday, Wednesday), (Wednesday, Thursday), (Thursday, Friday), (Friday, Saturday), (Saturday, Sunday)<br>
+                    There are two pairs having Wednesday.<br>
+                    Thus, Probability (53 Wednesday) = 2/7.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page 3 (Questions 21-30) -->
+        <div class="page" id="page3" data-page="3">
+            <!-- Question 21 -->
+            <div class="quiz" data-question="21">
+                <h4>Question 21:</h4>
+                <p>What is the sum of the probability of an event and its complementary event occurring together?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 21)">a) 0</li>
+                    <li onclick="checkAnswer(this, false, 21)">b) 1/2</li>
+                    <li onclick="checkAnswer(this, true, 21)">c) 1</li>
+                    <li onclick="checkAnswer(this, false, 21)">d) 1/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Complementary of an event is also known as non – event or event not occurring. So, the sum of the probability of an event and non – event occurring is always equal to one.
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="quiz" data-question="22">
+                <h4>Question 22:</h4>
+                <p>In which type of events the rule of multiplication of probability is applicable?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 22)">a) Independent</li>
+                    <li onclick="checkAnswer(this, false, 22)">b) Dependent</li>
+                    <li onclick="checkAnswer(this, false, 22)">c) Empirical</li>
+                    <li onclick="checkAnswer(this, false, 22)">d) Exhaustive</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    The rule of multiplication of probability is applicable in independent events which are not related to find their joint probability.
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="quiz" data-question="23">
+                <h4>Question 23:</h4>
+                <p>Which of the following is not an example of discrete probability distribution?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 23)">a) The number of persons in a room</li>
+                    <li onclick="checkAnswer(this, true, 23)">b) The weight of a person</li>
+                    <li onclick="checkAnswer(this, false, 23)">c) The number of rooms in a house</li>
+                    <li onclick="checkAnswer(this, false, 23)">d) Is it going to rain tonight</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    The weight of a person is not a discrete value as it can go on to a number of places after the decimal.
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="quiz" data-question="24">
+                <h4>Question 24:</h4>
+                <p>Which of the following is a correct option regarding the Poisson distribution?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 24)">a) The probability of success is always less than 8</li>
+                    <li onclick="checkAnswer(this, false, 24)">b) It always contains a contingency table</li>
+                    <li onclick="checkAnswer(this, false, 24)">c) The number of trials is always less than 10</li>
+                    <li onclick="checkAnswer(this, true, 24)">d) Mean and variance of the distribution are equal</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    The mean and variance in Poisson distribution are always the same. If A is the average number of successful outcomes in a Poisson distribution, then the mean and variance of the distribution will become equal to A. As in Poisson distribution only single parameter is required for estimating the probability.
+                </div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="quiz" data-question="25">
+                <h4>Question 25:</h4>
+                <p>Which of the following is not a condition of the binomial distribution?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 25)">a) Must have at least 4 trials</li>
+                    <li onclick="checkAnswer(this, false, 25)">b) Only 2 possible outcomes</li>
+                    <li onclick="checkAnswer(this, false, 25)">c) Have a constant probability of success</li>
+                    <li onclick="checkAnswer(this, false, 25)">d) Trials must be independent</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    There is no condition like trials must be at least 4 for binomial distribution. The only conditions for a binomial distribution is that the number of outcomes of a particular event must be only two like in a coin its only either a head or a tail and nothing else.
+                </div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="quiz" data-question="26">
+                <h4>Question 26:</h4>
+                <p>The probability of an event occurring is 0.39, then what will be the probability of this event not occurring?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 26)">a) 0.2</li>
+                    <li onclick="checkAnswer(this, false, 26)">b) 0.6</li>
+                    <li onclick="checkAnswer(this, true, 26)">c) 0.61</li>
+                    <li onclick="checkAnswer(this, false, 26)">d) 1.6</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, P(A) = 0.39<br>
+                    P(not A) = 1 – 0.39 = 0.61
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="quiz" data-question="27">
+                <h4>Question 27:</h4>
+                <p>What are the total number of outcomes when five coins are tossed together?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 27)">a) 56</li>
+                    <li onclick="checkAnswer(this, false, 27)">b) 64</li>
+                    <li onclick="checkAnswer(this, true, 27)">c) 32</li>
+                    <li onclick="checkAnswer(this, false, 27)">d) 16</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, n = 5<br>
+                    Total number of outcomes = 2^5 = 32
+                </div>
+            </div>
+
+            <!-- Question 28 -->
+            <div class="quiz" data-question="28">
+                <h4>Question 28:</h4>
+                <p>Which of the following terms relates to the sum total of all the outcomes in probability?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 28)">a) Exhaustive event</li>
+                    <li onclick="checkAnswer(this, false, 28)">b) Empirical event</li>
+                    <li onclick="checkAnswer(this, false, 28)">c) Independent event</li>
+                    <li onclick="checkAnswer(this, false, 28)">d) Dependent event</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Exhaustive event means the sum total of all the outcomes in probability. For example, when we roll a die once then the collection of all the possible events i.e., 1, 2, 3, 4, 5, 6 are known as exhaustive events.
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="quiz" data-question="29">
+                <h4>Question 29:</h4>
+                <p>A bag contains 3 white balls and 2 black balls. What will be the probability of drawing a red ball when drawn at random?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 29)">a) 2/5</li>
+                    <li onclick="checkAnswer(this, false, 29)">b) 1/5</li>
+                    <li onclick="checkAnswer(this, true, 29)">c) 0/5</li>
+                    <li onclick="checkAnswer(this, false, 29)">d) 3/5</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Since there is no red ball in the bag, the probability of drawing a red ball is 0.
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="quiz" data-question="30">
+                <h4>Question 30:</h4>
+                <p>The probability that tomorrow will be a sunny day is 0.68, then what is the probability that tomorrow will not be a sunny day?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 30)">a) 0.32</li>
+                    <li onclick="checkAnswer(this, false, 30)">b) 0.64</li>
+                    <li onclick="checkAnswer(this, false, 30)">c) 0.44</li>
+                    <li onclick="checkAnswer(this, false, 30)">d) 0.56</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, P(Sunny day) = 0.68<br>
+                    P(Not sunny day) = 1 – P(Sunny day) = 1 – 0.68 = 0.32
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page 4 (Questions 31-40) -->
+        <div class="page" id="page4" data-page="4">
+            <!-- Question 31 -->
+            <div class="quiz" data-question="31">
+                <h4>Question 31:</h4>
+                <p>What are the total number of outcomes when three coins are tossed together?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 31)">a) 4</li>
+                    <li onclick="checkAnswer(this, true, 31)">b) 8</li>
+                    <li onclick="checkAnswer(this, false, 31)">c) 16</li>
+                    <li onclick="checkAnswer(this, false, 31)">d) 12</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, n = 3<br>
+                    Total possible outcomes = 2^n = 2^3 = 8
+                </div>
+            </div>
+
+            <!-- Question 32 -->
+            <div class="quiz" data-question="32">
+                <h4>Question 32:</h4>
+                <p>What is the sum of the probability of an event and non-event?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 32)">a) 1</li>
+                    <li onclick="checkAnswer(this, false, 32)">b) 0</li>
+                    <li onclick="checkAnswer(this, false, 32)">c) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 32)">d) 2</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    The sum of the probability of an event and non-event is always 1.
+                </div>
+            </div>
+
+            <!-- Question 33 -->
+            <div class="quiz" data-question="33">
+                <h4>Question 33:</h4>
+                <p>An alphabet is chosen at random from the word "MATHEMATICS". What is the probability of it being a vowel?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 33)">a) 7/11</li>
+                    <li onclick="checkAnswer(this, false, 33)">b) 6/11</li>
+                    <li onclick="checkAnswer(this, true, 33)">c) 4/11</li>
+                    <li onclick="checkAnswer(this, false, 33)">d) 5/11</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total number of possible outcomes = 11<br>
+                    Favorable outcomes = 4<br>
+                    Probability = 4/11
+                </div>
+            </div>
+
+            <!-- Question 34 -->
+            <div class="quiz" data-question="34">
+                <h4>Question 34:</h4>
+                <p>What is the probability of getting a number that is divisible by 5 from 1 to 15?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 34)">a) 4/5</li>
+                    <li onclick="checkAnswer(this, false, 34)">b) 3/5</li>
+                    <li onclick="checkAnswer(this, false, 34)">c) 2/5</li>
+                    <li onclick="checkAnswer(this, true, 34)">d) 1/5</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 15<br>
+                    Favorable outcomes = 3<br>
+                    Probability = 3/15 = 1/5
+                </div>
+            </div>
+
+            <!-- Question 35 -->
+            <div class="quiz" data-question="35">
+                <h4>Question 35:</h4>
+                <p>The following probabilities are given with respect to an event. Which of the following is wrong?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 35)">a) 8/5</li>
+                    <li onclick="checkAnswer(this, false, 35)">b) 3/5</li>
+                    <li onclick="checkAnswer(this, false, 35)">c) 4/5</li>
+                    <li onclick="checkAnswer(this, false, 35)">d) 1/5</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    8/5 is wrong as probability of any event can never be greater than 1 or less than 0.
+                </div>
+            </div>
+
+            <!-- Question 36 -->
+            <div class="quiz" data-question="36">
+                <h4>Question 36:</h4>
+                <p>What are the total number of outcomes when 5 dices are rolled together?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 36)">a) 6578</li>
+                    <li onclick="checkAnswer(this, false, 36)">b) 5674</li>
+                    <li onclick="checkAnswer(this, true, 36)">c) 7776</li>
+                    <li onclick="checkAnswer(this, false, 36)">d) 7543</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, n = 5<br>
+                    Total number of possible outcomes = 6^n = 6^5 = 7776
+                </div>
+            </div>
+
+            <!-- Question 37 -->
+            <div class="quiz" data-question="37">
+                <h4>Question 37:</h4>
+                <p>A bag contains 10 black balls, 5 red balls and 5 white balls. What is the probability of getting either a red or a white ball?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 37)">a) 1/4</li>
+                    <li onclick="checkAnswer(this, true, 37)">b) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 37)">c) 3/4</li>
+                    <li onclick="checkAnswer(this, false, 37)">d) 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total number of possible outcomes = 20<br>
+                    Favorable outcomes = 10<br>
+                    Probability = 10/20 = 1/2
+                </div>
+            </div>
+
+            <!-- Question 38 -->
+            <div class="quiz" data-question="38">
+                <h4>Question 38:</h4>
+                <p>A dice is rolled. What is the probability that we get a number divisible by 3?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 38)">a) 1/3</li>
+                    <li onclick="checkAnswer(this, false, 38)">b) 1/4</li>
+                    <li onclick="checkAnswer(this, false, 38)">c) 2/3</li>
+                    <li onclick="checkAnswer(this, false, 38)">d) 3/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Total possible outcomes = 6<br>
+                    Favorable outcomes = 3, 6 = 2<br>
+                    Probability = 2/6 = 1/3
+                </div>
+            </div>
+
+            <!-- Question 39 -->
+            <div class="quiz" data-question="39">
+                <h4>Question 39:</h4>
+                <p>Which of the following is a classic example of binomial distribution of probability?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 39)">a) Pack of cards</li>
+                    <li onclick="checkAnswer(this, false, 39)">b) Throw a dice</li>
+                    <li onclick="checkAnswer(this, true, 39)">c) Toss a coin</li>
+                    <li onclick="checkAnswer(this, false, 39)">d) Number of students in class</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Toss a coin is a classic example of binomial distribution of probability as there are only two outcomes in this case namely head or tail. Also, both the outcomes have an equal chance of coming which remains constant for any number of trials. This constant probability of getting a head or a tail is 1/2.
+                </div>
+            </div>
+
+            <!-- Question 40 -->
+            <div class="quiz" data-question="40">
+                <h4>Question 40:</h4>
+                <p>When you toss a coin twice, what is the probability of getting a head in both the attempts?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 40)">a) 1/4</li>
+                    <li onclick="checkAnswer(this, false, 40)">b) 1</li>
+                    <li onclick="checkAnswer(this, false, 40)">c) 0</li>
+                    <li onclick="checkAnswer(this, false, 40)">d) 1/2</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = HH, TT, HT, TH<br>
+                    Favorable outcomes = HH<br>
+                    Thus, Probability = 1/4.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page 5 (Questions 41-51) -->
+        <div class="page" id="page5" data-page="5">
+            <!-- Question 41 -->
+            <div class="quiz" data-question="41">
+                <h4>Question 41:</h4>
+                <p>When you toss a coin what is the probability of not getting a head?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 41)">a) 1</li>
+                    <li onclick="checkAnswer(this, true, 41)">b) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 41)">c) 2</li>
+                    <li onclick="checkAnswer(this, false, 41)">d) 0</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    P(Not Head) = 1 – P(H) = 1 – 1/2 = 1/2
+                </div>
+            </div>
+
+            <!-- Question 42 -->
+            <div class="quiz" data-question="42">
+                <h4>Question 42:</h4>
+                <p>When you toss a coin twice what is the probability of getting a tail in both the attempts?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 42)">a) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 42)">b) 1</li>
+                    <li onclick="checkAnswer(this, false, 42)">c) 0</li>
+                    <li onclick="checkAnswer(this, true, 42)">d) 1/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = HH, TT, HT, TH<br>
+                    Favorable outcomes = TT<br>
+                    Thus, Probability = 1/4.
+                </div>
+            </div>
+
+            <!-- Question 43 -->
+            <div class="quiz" data-question="43">
+                <h4>Question 43:</h4>
+                <p>Two unbiased coins are tossed. What are the total number of outcomes?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 43)">a) 1</li>
+                    <li onclick="checkAnswer(this, false, 43)">b) 2</li>
+                    <li onclick="checkAnswer(this, true, 43)">c) 4</li>
+                    <li onclick="checkAnswer(this, false, 43)">d) 6</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HH, HT, TH, TT)<br>
+                    Thus, total number of outcomes are 4.
+                </div>
+            </div>
+
+            <!-- Question 44 -->
+            <div class="quiz" data-question="44">
+                <h4>Question 44:</h4>
+                <p>Two coins are tossed simultaneously. What is the probability of getting only one head after taking all the possibilities into consideration?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 44)">a) 1</li>
+                    <li onclick="checkAnswer(this, true, 44)">b) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 44)">c) 3/4</li>
+                    <li onclick="checkAnswer(this, false, 44)">d) 0</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HH, HT, TH, TT)<br>
+                    Favorable outcomes = HT, TH<br>
+                    Thus, probability = 1/2.
+                </div>
+            </div>
+
+            <!-- Question 45 -->
+            <div class="quiz" data-question="45">
+                <h4>Question 45:</h4>
+                <p>Two unbiased coins are tossed. What is the probability of getting no less than 1 head after taking all the possibilities into consideration?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 45)">a) 0</li>
+                    <li onclick="checkAnswer(this, false, 45)">b) 1</li>
+                    <li onclick="checkAnswer(this, false, 45)">c) 1/2</li>
+                    <li onclick="checkAnswer(this, true, 45)">d) 3/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HH, HT, TH, TT)<br>
+                    Favorable outcomes = HH, HT, TH<br>
+                    Thus, probability = 3/4.
+                </div>
+            </div>
+
+            <!-- Question 46 -->
+            <div class="quiz" data-question="46">
+                <h4>Question 46:</h4>
+                <p>Two unbiased coins are tossed. What is the probability of getting only one tail after taking all the possibilities into consideration?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 46)">a) 1/2</li>
+                    <li onclick="checkAnswer(this, false, 46)">b) 0</li>
+                    <li onclick="checkAnswer(this, false, 46)">c) 3/4</li>
+                    <li onclick="checkAnswer(this, false, 46)">d) 1/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HH, HT, TH, TT)<br>
+                    Favorable outcomes = HT, TH<br>
+                    Thus, probability = 1/2.
+                </div>
+            </div>
+
+            <!-- Question 47 -->
+            <div class="quiz" data-question="47">
+                <h4>Question 47:</h4>
+                <p>Two unbiased coins are tossed. What is the probability of getting two tail?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 47)">a) 3/4</li>
+                    <li onclick="checkAnswer(this, false, 47)">b) 1/2</li>
+                    <li onclick="checkAnswer(this, true, 47)">c) 1/4</li>
+                    <li onclick="checkAnswer(this, false, 47)">d) 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HH, HT, TH, TT)<br>
+                    Favorable outcomes = TT<br>
+                    Thus, probability = 1/4.
+                </div>
+            </div>
+
+            <!-- Question 48 -->
+            <div class="quiz" data-question="48">
+                <h4>Question 48:</h4>
+                <p>Which of the following options is incorrect when one coin is tossed?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 48)">a) P(H) = 1/2</li>
+                    <li onclick="checkAnswer(this, false, 48)">b) P(T) = 1/2</li>
+                    <li onclick="checkAnswer(this, false, 48)">c) P(H) + P(T) = 1</li>
+                    <li onclick="checkAnswer(this, true, 48)">d) P(H) * P(T) = 1</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    P(H) * P(T) = 1 is incorrect as,<br>
+                    P(H) * P(T) = 1/2 * 1/2 = 1/4
+                </div>
+            </div>
+
+            <!-- Question 49 -->
+            <div class="quiz" data-question="49">
+                <h4>Question 49:</h4>
+                <p>Three unbiased coins are tossed. What are the total number of outcomes possible?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 49)">a) 16</li>
+                    <li onclick="checkAnswer(this, false, 49)">b) 10</li>
+                    <li onclick="checkAnswer(this, true, 49)">c) 8</li>
+                    <li onclick="checkAnswer(this, false, 49)">d) 4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)<br>
+                    Thus, total number of outcomes are 8.
+                </div>
+            </div>
+
+            <!-- Question 50 -->
+            <div class="quiz" data-question="50">
+                <h4>Question 50:</h4>
+                <p>What is the correct expression for finding the total number of outcomes when n coins are tossed at a time?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, true, 50)">a) 2^n</li>
+                    <li onclick="checkAnswer(this, false, 50)">b) n^2</li>
+                    <li onclick="checkAnswer(this, false, 50)">c) n</li>
+                    <li onclick="checkAnswer(this, false, 50)">d) 2n/4</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, Number of coins = n.<br>
+                    Total number of possible outcomes = 2^n.
+                </div>
+            </div>
+
+            <!-- Question 51 -->
+            <div class="quiz" data-question="51">
+                <h4>Question 51:</h4>
+                <p>Three unbiased coins are tossed. What is the probability of getting only one H?</p>
+                <ul class="options">
+                    <li onclick="checkAnswer(this, false, 51)">a) 1/4</li>
+                    <li onclick="checkAnswer(this, true, 51)">b) 3/8</li>
+                    <li onclick="checkAnswer(this, false, 51)">c) 5/8</li>
+                    <li onclick="checkAnswer(this, false, 51)">d) 1/2</li>
+                </ul>
+                <div class="explanation">
+                    <strong>Explanation:</strong><br>
+                    Given, coins = 3<br>
+                    Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)<br>
+                    Favorable outcomes = (THT, HTT, TTH)<br>
+                    Thus, probability = 3/8.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="4">4</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="5">5</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" data-page="next" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <span>Gowthamraj Network</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables to track quiz progress
+        let answeredQuestions = {};
+        let totalQuestions = 51;
+        let questionsPerPage = 10;
+        
+        // Toggle sidebar
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+        });
+        
+        // Close sidebar when clicking overlay
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('active');
+            this.classList.remove('active');
+        });
+        
+        // Function to check answers
+        function checkAnswer(element, isCorrect, questionNumber) {
+            // Reset all options
+            const options = element.parentElement.querySelectorAll('li');
+            options.forEach(option => {
+                option.classList.remove('correct');
+                option.classList.remove('incorrect');
+            });
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct');
+            } else {
+                element.classList.add('incorrect');
+            }
+            
+            // Show explanation
+            const explanation = element.parentElement.nextElementSibling;
+            explanation.style.display = 'block';
+            
+            // Mark question as answered
+            const quizContainer = element.closest('.quiz');
+            quizContainer.classList.add('answered');
+            
+            // Track answered question
+            if (questionNumber) {
+                answeredQuestions[questionNumber] = true;
+                
+                // Save progress to localStorage
+                saveProgress();
+            }
+            
+            // Update progress
+            updateProgress();
+            
+            // Check if all questions on current page are answered
+            checkPageCompletion();
+        }
+        
+        // Function to update progress bar and counter
+        function updateProgress() {
+            const answeredCount = Object.keys(answeredQuestions).length;
+            const progressPercent = (answeredCount / totalQuestions) * 100;
+            
+            // Update progress bar
+            document.querySelector('.progress-bar').style.width = progressPercent + '%';
+            document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+            
+            // Update counter
+            document.getElementById('answered-count').textContent = answeredCount;
+        }
+        
+        // Function to check if all questions on current page are answered
+        function checkPageCompletion() {
+            const currentPage = document.querySelector('.page.active');
+            const pageNumber = parseInt(currentPage.getAttribute('data-page'));
+            const questionsOnPage = currentPage.querySelectorAll('.quiz');
+            
+            // Count answered questions on this page
+            let answeredOnPage = 0;
+            questionsOnPage.forEach(quiz => {
+                if (quiz.classList.contains('answered')) {
+                    answeredOnPage++;
+                }
+            });
+             // If all questions on page are answered, move to next page after a short delay
+             if (answeredOnPage === questionsOnPage.length && pageNumber < 6) {
+                setTimeout(() => {
+                    showPage(pageNumber + 1);
+                    
+                    // Update active class in pagination
+                    document.querySelectorAll('.pagination .page-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    document.querySelector(`.pagination .page-item:nth-child(${pageNumber + 1})`).classList.add('active');
+                    
+                    // Scroll to top of content
+                    document.querySelector('.content').scrollTop = 0;
+                    window.scrollTo(0, 0);
+                }, 1500); // 1.5 second delay before moving to next page
+            }
+        }
+        
+        // Pagination functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show first page by default
+            showPage(1);
+            
+            // Add click event to pagination links
+            const paginationLinks = document.querySelectorAll('.pagination .page-link');
+            paginationLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get page number
+                    const pageNum = this.getAttribute('data-page');
+                    
+                    if (pageNum === 'next') {
+                        // Get current active page
+                        const activePage = document.querySelector('.pagination .active');
+                        const nextPage = activePage.nextElementSibling;
+                        
+                        if (nextPage && nextPage.querySelector('.page-link').getAttribute('data-page') !== 'next') {
+                            const nextPageNum = nextPage.querySelector('.page-link').getAttribute('data-page');
+                            showPage(nextPageNum);
+                            
+                            // Update active class
+                            activePage.classList.remove('active');
+                            nextPage.classList.add('active');
+                        } else {
+                            // If on last page, go to first page
+                            showPage(1);
+                            
+                            // Update active class
+                            activePage.classList.remove('active');
+                            document.querySelector('.pagination li:first-child').classList.add('active');
+                        }
+                    } else {
+                        showPage(pageNum);
+                        
+                        // Update active class
+                        document.querySelectorAll('.pagination .page-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        this.parentElement.classList.add('active');
+                    }
+                    
+                    // Scroll to top of content
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // Initialize progress
+            updateProgress();
+            
+            // Check for previously answered questions (if stored in localStorage)
+            restoreProgress();
+        });
+        
+        // Function to show specific page
+        function showPage(pageNum) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+        
+        // Function to restore progress from localStorage (if available)
+        function restoreProgress() {
+            const savedAnswers = localStorage.getItem('trainQuizAnswers');
+            if (savedAnswers) {
+                answeredQuestions = JSON.parse(savedAnswers);
+                
+                // Mark questions as answered in the UI
+                Object.keys(answeredQuestions).forEach(questionNum => {
+                    const quizElement = document.querySelector(`.quiz[data-question="${questionNum}"]`);
+                    if (quizElement) {
+                        quizElement.classList.add('answered');
+                    }
+                });
+                
+                // Update progress
+                updateProgress();
+            }
+        }
+        
+        // Save progress to localStorage when answering questions
+        function saveProgress() {
+            localStorage.setItem('trainQuizAnswers', JSON.stringify(answeredQuestions));
+        }
+    </script>
+</body>
+</html>
