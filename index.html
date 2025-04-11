@@ -130,7 +130,7 @@
                 <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="text-end mt-1">
-                <small class="text-muted">Questions answered: <span id="answered-count">0</span>/51</small>
+                <small class="text-muted">Questions answered: <span id="answered-count">0</span>/98</small>
             </div>
         </div>
         
@@ -1003,7 +1003,9 @@
                     Total number of possible outcomes = 2^n.
                 </div>
             </div>
-
+            </div>
+          <!-- Page 6 (Questions 51-61) -->
+          <div class="page" id="page6" data-page="6">
             <!-- Question 51 -->
             <div class="quiz" data-question="51">
                 <h4>Question 51:</h4>
@@ -1022,7 +1024,881 @@
                     Thus, probability = 3/8.
                 </div>
             </div>
+  
+    <!-- Question 52 -->
+    <div class="quiz" data-question="52">
+        <h4>Question 52:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting at most one H?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 52)">a) 1/2</li>
+            <li onclick="checkAnswer(this, false, 52)">b) 1/4</li>
+            <li onclick="checkAnswer(this, false, 52)">c) 5/8</li>
+            <li onclick="checkAnswer(this, false, 52)">d) 3/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (THT, HTT, TTH, TTT)
+            Thus, probability = 4/8 = 1/2.
         </div>
+    </div>
+
+    <!-- Question 53 -->
+    <div class="quiz" data-question="53">
+        <h4>Question 53:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting at most two tail?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 53)">a) 1/8</li>
+            <li onclick="checkAnswer(this, false, 53)">b) 5/8</li>
+            <li onclick="checkAnswer(this, true, 53)">c) 7/8</li>
+            <li onclick="checkAnswer(this, false, 53)">d) 3/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (THT, HTT, TTH, HHH, HHT, HTH, THH)
+            Thus, probability = 7/8.
+        </div>
+    </div>
+
+    <!-- Question 54 -->
+    <div class="quiz" data-question="54">
+        <h4>Question 54:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting three tail?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 54)">a) 7/8</li>
+            <li onclick="checkAnswer(this, false, 54)">b) 5/8</li>
+            <li onclick="checkAnswer(this, false, 54)">c) 3/8</li>
+            <li onclick="checkAnswer(this, true, 54)">d) 1/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (TTT)
+            Thus, probability = 1/8.
+        </div>
+    </div>
+
+    <!-- Question 55 -->
+    <div class="quiz" data-question="55">
+        <h4>Question 55:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting minimum two head?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 55)">a) 1/2</li>
+            <li onclick="checkAnswer(this, false, 55)">b) 3/4</li>
+            <li onclick="checkAnswer(this, false, 55)">c) 1/8</li>
+            <li onclick="checkAnswer(this, false, 55)">d) 7/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (HHT, HTH, THH, HHH)
+            Thus, probability = 4/8 = 1/2.
+        </div>
+    </div>
+
+    <!-- Question 56 -->
+    <div class="quiz" data-question="56">
+        <h4>Question 56:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting same event in all the three throws?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 56)">a) 1/2</li>
+            <li onclick="checkAnswer(this, false, 56)">b) 1/8</li>
+            <li onclick="checkAnswer(this, true, 56)">c) 1/4</li>
+            <li onclick="checkAnswer(this, false, 56)">d) 3/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (HHH, TTT)
+            Thus, probability = 2/8 = 1/4.
+        </div>
+    </div>
+
+    <!-- Question 57 -->
+    <div class="quiz" data-question="57">
+        <h4>Question 57:</h4>
+        <p>Ten unbiased coins are tossed. What are the total number of outcomes possible?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 57)">a) 1004</li>
+            <li onclick="checkAnswer(this, true, 57)">b) 1024</li>
+            <li onclick="checkAnswer(this, false, 57)">c) 1086</li>
+            <li onclick="checkAnswer(this, false, 57)">d) 1056</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, n = 10
+            Total number of outcomes = 2^n = 2^10 = 1024
+        </div>
+    </div>
+
+    <!-- Question 58 -->
+    <div class="quiz" data-question="58">
+        <h4>Question 58:</h4>
+        <p>Three unbiased coins are tossed. What is the probability of getting complement of having a tail?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 58)">a) 3/4</li>
+            <li onclick="checkAnswer(this, false, 58)">b) 1/2</li>
+            <li onclick="checkAnswer(this, false, 58)">c) 3/8</li>
+            <li onclick="checkAnswer(this, true, 58)">d) 1/8</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, coins = 3
+            Possible outcomes = (HHH, HHT, HTH, THH, THT, HTT, TTH, TTT)
+            Favorable outcomes = (HHH)
+            Thus, probability = 1/8.
+        </div>
+    </div>
+
+    <!-- Question 59 -->
+    <div class="quiz" data-question="59">
+        <h4>Question 59:</h4>
+        <p>An unbiased dice is thrown. What are the total number of possible outcomes?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 59)">a) 18</li>
+            <li onclick="checkAnswer(this, false, 59)">b) 12</li>
+            <li onclick="checkAnswer(this, true, 59)">c) 6</li>
+            <li onclick="checkAnswer(this, false, 59)">d) 24</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Thus, total number of possible outcomes when an unbiased dice is thrown are 6.
+        </div>
+    </div>
+
+    <!-- Question 60 -->
+    <div class="quiz" data-question="60">
+        <h4>Question 60:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting 3?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 60)">a) 1/6</li>
+            <li onclick="checkAnswer(this, false, 60)">b) 1/3</li>
+            <li onclick="checkAnswer(this, false, 60)">c) 1/2</li>
+            <li onclick="checkAnswer(this, false, 60)">d) 2/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 3
+            Probability = 1/6
+        </div>
+    </div>
+</div>
+
+<!-- Page 7 (Questions 61-71) -->
+<div class="page" id="page7" data-page="7">
+    <!-- Question 61 -->
+    <div class="quiz" data-question="61">
+        <h4>Question 61:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting 10?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 61)">a) 1</li>
+            <li onclick="checkAnswer(this, true, 61)">b) 0</li>
+            <li onclick="checkAnswer(this, false, 61)">c) 1/2</li>
+            <li onclick="checkAnswer(this, false, 61)">d) 1/6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 0
+            Probability = 0/6 = 0
+        </div>
+    </div>
+
+
+
+    <!-- Question 62 -->
+    <div class="quiz" data-question="62">
+        <h4>Question 62:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting a number greater than and equal to 3?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 62)">a) 2/3</li>
+            <li onclick="checkAnswer(this, false, 62)">b) 1/3</li>
+            <li onclick="checkAnswer(this, false, 62)">c) 1/6</li>
+            <li onclick="checkAnswer(this, false, 62)">d) 3/4</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 3, 4, 5, 6
+            Probability = 4/6 = 2/3
+        </div>
+    </div>
+
+    <!-- Question 63 -->
+    <div class="quiz" data-question="63">
+        <h4>Question 63:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting a number less than 3?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 63)">a) 5/6</li>
+            <li onclick="checkAnswer(this, false, 63)">b) 2/3</li>
+            <li onclick="checkAnswer(this, true, 63)">c) 1/3</li>
+            <li onclick="checkAnswer(this, false, 63)">d) 1/6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 1, 2
+            Probability = 2/6 = 1/3
+        </div>
+    </div>
+
+    <!-- Question 64 -->
+    <div class="quiz" data-question="64">
+        <h4>Question 64:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting an odd number?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 64)">a) 2/3</li>
+            <li onclick="checkAnswer(this, false, 64)">b) 1/6</li>
+            <li onclick="checkAnswer(this, false, 64)">c) 1/3</li>
+            <li onclick="checkAnswer(this, true, 64)">d) 1/2</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 1, 3, 5
+            Probability = 3/6 = 1/2
+        </div>
+    </div>
+
+    <!-- Question 65 -->
+    <div class="quiz" data-question="65">
+        <h4>Question 65:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting 5 or a greater number?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 65)">a) 1/3</li>
+            <li onclick="checkAnswer(this, false, 65)">b) 1/3</li>
+            <li onclick="checkAnswer(this, false, 65)">c) 5/6</li>
+            <li onclick="checkAnswer(this, false, 65)">d) 2/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 5, 6
+            Probability = 2/6 = 1/3
+        </div>
+    </div>
+
+    <!-- Question 66 -->
+    <div class="quiz" data-question="66">
+        <h4>Question 66:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting an even number greater than 3?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 66)">a) 4/6</li>
+            <li onclick="checkAnswer(this, false, 66)">b) 5/6</li>
+            <li onclick="checkAnswer(this, true, 66)">c) 2/6</li>
+            <li onclick="checkAnswer(this, false, 66)">d) 3/6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 4, 6
+            Probability = 2/6
+        </div>
+    </div>
+
+    <!-- Question 67 -->
+    <div class="quiz" data-question="67">
+        <h4>Question 67:</h4>
+        <p>An unbiased dice is thrown. What is the probability of getting an even number greater than 0?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 67)">a) 0</li>
+            <li onclick="checkAnswer(this, true, 67)">b) 1/2</li>
+            <li onclick="checkAnswer(this, false, 67)">c) 1/2</li>
+            <li onclick="checkAnswer(this, false, 67)">d) 6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Possible outcomes = 1, 2, 3, 4, 5, 6
+            Favorable outcome = 2, 4, 6
+            Probability = 3/6 = 1/2
+        </div>
+    </div>
+
+    <!-- Question 68 -->
+    <div class="quiz" data-question="68">
+        <h4>Question 68:</h4>
+        <p>n dice are thrown simultaneously. What is the total number of possible outcomes?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 68)">a) 6^n</li>
+            <li onclick="checkAnswer(this, false, 68)">b) 6^n/3</li>
+            <li onclick="checkAnswer(this, false, 68)">c) n^6/2</li>
+            <li onclick="checkAnswer(this, false, 68)">d) 3n^2</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, Number of dice = n
+            Total number of possible outcomes = 6^n as according to the theory of combination we can get 6 different outcomes in throw of a single dice and since n dice are thrown simultaneously. Thus, total possible outcomes will be represented by 6^n.
+        </div>
+    </div>
+
+    <!-- Question 69 -->
+    <div class="quiz" data-question="69">
+        <h4>Question 69:</h4>
+        <p>Two dice are thrown simultaneously. What will be the total number of possible outcomes?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 69)">a) 32</li>
+            <li onclick="checkAnswer(this, false, 69)">b) 30</li>
+            <li onclick="checkAnswer(this, true, 69)">c) 36</li>
+            <li onclick="checkAnswer(this, false, 69)">d) 28</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, Number of dice = 2
+            Total number of possible outcomes = 6^n = 6^2 = 36
+        </div>
+    </div>
+
+    <!-- Question 70 -->
+    <div class="quiz" data-question="70">
+        <h4>Question 70:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting equal digits in both the dice?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 70)">a) 1/12</li>
+            <li onclick="checkAnswer(this, false, 70)">b) 1/3</li>
+            <li onclick="checkAnswer(this, true, 70)">c) 1/6</li>
+            <li onclick="checkAnswer(this, false, 70)">d) 1/2</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (11, 22, 33, 44, 55, 66) = 6
+            Probability = 6/36 = 1/6
+        </div>
+    </div>
+</div>
+<!-- Page 8 (Questions 71-81) -->
+<div class="page" id="page8" data-page="8">
+    <!-- Question 71 -->
+    <div class="quiz" data-question="71">
+        <h4>Question 71:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting a number not divisible by two in both the dice?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 71)">a) 1/9</li>
+            <li onclick="checkAnswer(this, true, 71)">b) 1/4</li>
+            <li onclick="checkAnswer(this, false, 71)">c) 1/12</li>
+            <li onclick="checkAnswer(this, false, 71)">d) 1/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (11, 13, 15, 31, 33, 35, 51, 53, 55) = 9
+            Probability = 9/36 = 1/4
+        </div>
+    </div>
+
+
+    <!-- Question 72 -->
+    <div class="quiz" data-question="72">
+        <h4>Question 72:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting a number greater than 4 in both the dice?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 72)">a) 1/9</li>
+            <li onclick="checkAnswer(this, false, 72)">b) 1/3</li>
+            <li onclick="checkAnswer(this, false, 72)">c) 1/2</li>
+            <li onclick="checkAnswer(this, false, 72)">d) 1/6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (55, 56, 65, 66) = 4
+            Probability = 4/36 = 1/9
+        </div>
+    </div>
+
+    <!-- Question 73 -->
+    <div class="quiz" data-question="73">
+        <h4>Question 73:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting a prime number in both the dice?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 73)">a) 1/6</li>
+            <li onclick="checkAnswer(this, false, 73)">b) 1/12</li>
+            <li onclick="checkAnswer(this, true, 73)">c) 1/4</li>
+            <li onclick="checkAnswer(this, false, 73)">d) 1/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (22, 23, 25, 32, 33, 35, 52, 53, 55) = 9
+            Probability = 9/36 = 1/4
+        </div>
+    </div>
+
+    <!-- Question 74 -->
+    <div class="quiz" data-question="74">
+        <h4>Question 74:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting a odd number greater than 4 in both the dice?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 74)">a) 7/8</li>
+            <li onclick="checkAnswer(this, false, 74)">b) 1/9</li>
+            <li onclick="checkAnswer(this, false, 74)">c) 2/15</li>
+            <li onclick="checkAnswer(this, true, 74)">d) 1/36</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = 5,5 = 1
+            Probability = 1/36
+        </div>
+    </div>
+
+    <!-- Question 75 -->
+    <div class="quiz" data-question="75">
+        <h4>Question 75:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting sum of both the numbers as 9?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 75)">a) 1/9</li>
+            <li onclick="checkAnswer(this, false, 75)">b) 1/12</li>
+            <li onclick="checkAnswer(this, false, 75)">c) 1/6</li>
+            <li onclick="checkAnswer(this, false, 75)">d) 5/6</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (36, 45, 54, 63) = 4
+            Probability = 4/36 = 1/9
+        </div>
+    </div>
+
+    <!-- Question 76 -->
+    <div class="quiz" data-question="76">
+        <h4>Question 76:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting difference of both the numbers as 4?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 76)">a) 1/12</li>
+            <li onclick="checkAnswer(this, false, 76)">b) 1/6</li>
+            <li onclick="checkAnswer(this, true, 76)">c) 1/9</li>
+            <li onclick="checkAnswer(this, false, 76)">d) 1/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (15, 26, 51, 62)
+            Probability = 4/36 = 1/9
+        </div>
+    </div>
+
+    <!-- Question 77 -->
+    <div class="quiz" data-question="77">
+        <h4>Question 77:</h4>
+        <p>Two dice are thrown simultaneously. What is the probability of getting a number divisible by 2 on the first dice and a number divisible by 3 on the second dice simultaneously?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 77)">a) 1/6</li>
+            <li onclick="checkAnswer(this, false, 77)">b) 1/3</li>
+            <li onclick="checkAnswer(this, false, 77)">c) 1/4</li>
+            <li onclick="checkAnswer(this, false, 77)">d) 1/2</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total number of possible outcomes = 36
+            Favorable outcomes = (23, 26, 43, 46, 63, 66)
+            Probability = 6/36 = 1/6
+        </div>
+    </div>
+
+    <!-- Question 78 -->
+    <div class="quiz" data-question="78">
+        <h4>Question 78:</h4>
+        <p>Three dice are thrown simultaneously. What are the total number of possible outcomes?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 78)">a) 216</li>
+            <li onclick="checkAnswer(this, false, 78)">b) 144</li>
+            <li onclick="checkAnswer(this, false, 78)">c) 256</li>
+            <li onclick="checkAnswer(this, false, 78)">d) 168</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Given, Number of dice = 3
+            Total number of possible outcomes = 6^3 = 216
+        </div>
+    </div>
+
+    <!-- Question 79 -->
+    <div class="quiz" data-question="79">
+        <h4>Question 79:</h4>
+        <p>What is the probability of getting a club from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 79)">a) 1/12</li>
+            <li onclick="checkAnswer(this, false, 79)">b) 1/3</li>
+            <li onclick="checkAnswer(this, true, 79)">c) 1/4</li>
+            <li onclick="checkAnswer(this, false, 79)">d) 1/2</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 13
+            Probability = 13/52 = 1/4
+        </div>
+    </div>
+
+    <!-- Question 80 -->
+    <div class="quiz" data-question="80">
+        <h4>Question 80:</h4>
+        <p>What will be the probability of getting a jack of the spade from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 80)">a) 1/52</li>
+            <li onclick="checkAnswer(this, false, 80)">b) 4/52</li>
+            <li onclick="checkAnswer(this, false, 80)">c) 8/52</li>
+            <li onclick="checkAnswer(this, false, 80)">d) 12/52</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 1
+            Probability = 1/52
+        </div>
+    </div>
+</div>
+    <!-- Question 81 -->
+     <!-- Page 9 (Questions 81-91) -->
+<div class="page" id="page9" data-page="9">
+    <div class="quiz" data-question="81">
+        <h4>Question 81:</h4>
+        <p>What will be the probability of getting a queen from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 81)">a) 3/4</li>
+            <li onclick="checkAnswer(this, true, 81)">b) 1/13</li>
+            <li onclick="checkAnswer(this, false, 81)">c) 1/2</li>
+            <li onclick="checkAnswer(this, false, 81)">d) 2/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 4
+            Probability = 4/52 = 1/13
+        </div>
+    </div>
+
+
+
+    <!-- Question 82 -->
+    <div class="quiz" data-question="82">
+        <h4>Question 82:</h4>
+        <p>What will be the probability of getting a red card from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true,  82)">a) 1/2</li>
+            <li onclick="checkAnswer(this, false, 82)">b) 1/4</li>
+            <li onclick="checkAnswer(this, false, 82)">c) 1/3</li>
+            <li onclick="checkAnswer(this, false, 82)">d) 1/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 26
+            Probability = 26/52 = 1/2
+        </div>
+    </div>
+
+    <!-- Question 83 -->
+    <div class="quiz" data-question="83">
+        <h4>Question 83:</h4>
+        <p>What is the probability of getting a face card from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 83)">a) 2/13</li>
+            <li onclick="checkAnswer(this, false, 83)">b) 1/13</li>
+            <li onclick="checkAnswer(this, true, 83)">c) 3/13</li>
+            <li onclick="checkAnswer(this, false, 83)">d) 4/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 12
+            Probability = 12/52 = 3/13
+        </div>
+    </div>
+
+    <!-- Question 84 -->
+    <div class="quiz" data-question="84">
+        <h4>Question 84:</h4>
+        <p>What is the probability of getting a numbered card from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 84)">a) 11/13</li>
+            <li onclick="checkAnswer(this, false, 84)">b) 2/13</li>
+            <li onclick="checkAnswer(this, false, 84)">c) 5/13</li>
+            <li onclick="checkAnswer(this, true, 84)">d) 9/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 36
+            Probability = 36/52 = 9/13
+        </div>
+    </div>
+
+    <!-- Question 85 -->
+    <div class="quiz" data-question="85">
+        <h4>Question 85:</h4>
+        <p>What is the probability of getting a black ace from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 85)">a) 1/26</li>
+            <li onclick="checkAnswer(this, false, 85)">b) 1/13</li>
+            <li onclick="checkAnswer(this, false, 85)">c) 2/13</li>
+            <li onclick="checkAnswer(this, false, 85)">d) 3/26</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 2
+            Probability = 2/52 = 1/26
+        </div>
+    </div>
+
+    <!-- Question 86 -->
+    <div class="quiz" data-question="86">
+        <h4>Question 86:</h4>
+        <p>What is the probability of getting a number 8 from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 86)">a) 6/13</li>
+            <li onclick="checkAnswer(this, false, 86)">b) 4/13</li>
+            <li onclick="checkAnswer(this, true, 86)">c) 1/13</li>
+            <li onclick="checkAnswer(this, false, 86)">d) 2/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 4
+            Probability = 4/52 = 1/13
+        </div>
+    </div>
+
+    <!-- Question 87 -->
+    <div class="quiz" data-question="87">
+        <h4>Question 87:</h4>
+        <p>What is the probability of getting a red numbered card greater than 6 from a well shuffled deck of 52 cards?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 87)">a) 4/13</li>
+            <li onclick="checkAnswer(this, true, 87)">b) 2/13</li>
+            <li onclick="checkAnswer(this, false, 87)">c) 5/13</li>
+            <li onclick="checkAnswer(this, false, 87)">d) 3/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 8
+            Probability = 8/52 = 2/13
+        </div>
+    </div>
+
+    <!-- Question 88 -->
+    <div class="quiz" data-question="88">
+        <h4>Question 88:</h4>
+        <p>What is the probability of getting a non – numbered card from a well shuffled standard deck?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 88)">a) 4/13</li>
+            <li onclick="checkAnswer(this, false, 88)">b) 6/13</li>
+            <li onclick="checkAnswer(this, false, 88)">c) 5/13</li>
+            <li onclick="checkAnswer(this, false, 88)">d) 3/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total possible outcomes = 52
+            Favorable outcomes = 16
+            Probability = 16/52 = 4/13
+        </div>
+    </div>
+
+    <!-- Question 89 -->
+    <div class="quiz" data-question="89">
+        <h4>Question 89:</h4>
+        <p>What is the probability of drawing two kings from a well shuffled pack of cards without replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 89)">a) 5/663</li>
+            <li onclick="checkAnswer(this, false, 89)">b) 3/221</li>
+            <li onclick="checkAnswer(this, true, 89)">c) 1/221</li>
+            <li onclick="checkAnswer(this, false, 89)">d) 1/663</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a king = 4/52 = 1/13
+            Probability of 2nd card being a king = 3/51 = 1/17
+            Total probability = 1/13 * 1/17 = 1/221
+        </div>
+    </div>
+
+    <!-- Question 90 -->
+    <div class="quiz" data-question="90">
+        <h4>Question 90:</h4>
+        <p>What is the probability of drawing two spades from a well shuffled pack of cards without replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 90)">a) 1/17</li>
+            <li onclick="checkAnswer(this, false, 90)">b) 1/16</li>
+            <li onclick="checkAnswer(this, false, 90)">c) 2/17</li>
+            <li onclick="checkAnswer(this, false, 90)">d) 2/15</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a spade = 13/52 = 1/4
+            Probability of 2nd card being a spade = 12/51 = 4/17
+            Total probability = 1/4 * 4/17 = 1/17
+        </div>
+    </div>
+</div>
+    <!-- Page 10 (Questions 91-98) -->
+<div class="page" id="page10" data-page="10">
+    <!-- Question 91 -->
+    <div class="quiz" data-question="91">
+        <h4>Question 91:</h4>
+        <p>What is the probability of drawing one spade and one club from a well shuffled pack of cards without replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 91)">a) 15/204</li>
+            <li onclick="checkAnswer(this, true, 91)">b) 13/204</li>
+            <li onclick="checkAnswer(this, false, 91)">c) 11/204</li>
+            <li onclick="checkAnswer(this, false, 91)">d) 9/204</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a spade = 13/52 = 1/4
+            Probability of 2nd card being a club = 13/51
+            Total probability = 1/4 * 13/51 = 13/204
+        </div>
+    </div>
+
+
+
+    <!-- Question 92 -->
+    <div class="quiz" data-question="92">
+        <h4>Question 92:</h4>
+        <p>What is the probability of drawing two numbered cards from a well shuffled pack of cards without replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 92)">a) 105/221</li>
+            <li onclick="checkAnswer(this, false, 92)">b) 142/221</li>
+            <li onclick="checkAnswer(this, false, 92)">c) 90/221</li>
+            <li onclick="checkAnswer(this, false, 92)">d) 165/221</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a number = 36/52 = 9/13
+            Probability of 2nd card being a number = 35/51
+            Total probability = 9/13 * 35/51 = 315/663 = 105/221
+        </div>
+    </div>
+
+    <!-- Question 93 -->
+    <div class="quiz" data-question="93">
+        <h4>Question 93:</h4>
+        <p>What is the probability of drawing two queens of diamond from a well shuffled pack of cards without replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 93)">a) 1/4</li>
+            <li onclick="checkAnswer(this, false, 93)">b) 1</li>
+            <li onclick="checkAnswer(this, true, 93)">c) 0</li>
+            <li onclick="checkAnswer(this, false, 93)">d) 1/3</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a diamond queen = 1/52
+            Probability of 2nd card being a diamond queen = 0/51 = 0
+            Total probability = 1/52 * 0 = 0
+        </div>
+    </div>
+
+    <!-- Question 94 -->
+    <div class="quiz" data-question="94">
+        <h4>Question 94:</h4>
+        <p>What is the probability of getting two ace cards from a well shuffled standard deck with replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 94)">a) 8/169</li>
+            <li onclick="checkAnswer(this, false, 94)">b) 4/169</li>
+            <li onclick="checkAnswer(this, false, 94)">c) 16/169</li>
+            <li onclick="checkAnswer(this, true, 94)">d) 1/169</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being an ace = 4/52 = 1/13
+            Probability of 2nd card being an ace = 4/52 = 1/13
+            Total probability = 1/13 * 1/13 = 1/169
+        </div>
+    </div>
+
+    <!-- Question 95 -->
+    <div class="quiz" data-question="95">
+        <h4>Question 95:</h4>
+        <p>What is the probability of getting two heart cards from a well shuffled standard deck with replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 95)">a) 1/16</li>
+            <li onclick="checkAnswer(this, false, 95)">b) 4/52</li>
+            <li onclick="checkAnswer(this, false, 95)">c) 8/52</li>
+            <li onclick="checkAnswer(this, false, 95)">d) 4/16</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a heart = 13/52 = 1/4
+            Probability of 2nd card being a heart = 13/52 = 1/4
+            Total probability = 1/4 * 1/4 = 1/16
+        </div>
+    </div>
+
+    <!-- Question 96 -->
+    <div class="quiz" data-question="96">
+        <h4>Question 96:</h4>
+        <p>What is the probability of getting two numbered cards from a well shuffled standard deck with replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 96)">a) 13/169</li>
+            <li onclick="checkAnswer(this, false, 96)">b) 9/169</li>
+            <li onclick="checkAnswer(this, true, 96)">c) 81/169</li>
+            <li onclick="checkAnswer(this, false, 96)">d) 18/169</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a number = 36/52 = 9/13
+            Probability of 2nd card being a number = 36/52 = 9/13
+            Total probability = 9/13 * 9/13 = 81/169
+        </div>
+    </div>
+
+    <!-- Question 97 -->
+    <div class="quiz" data-question="97">
+        <h4>Question 97:</h4>
+        <p>What is the probability of getting two non-numbered cards from a well shuffled standard deck with replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false, 97)">a) 4/169</li>
+            <li onclick="checkAnswer(this, true, 97)">b) 16/169</li>
+            <li onclick="checkAnswer(this, false, 97)">c) 4/13</li>
+            <li onclick="checkAnswer(this, false, 97)">d) 13/169</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a non-number = 16/52 = 4/13
+            Probability of 2nd card being a non-number = 16/52 = 4/13
+            Total probability = 4/13 * 4/13 = 16/169
+        </div>
+    </div>
+
+    <!-- Question 98 -->
+    <div class="quiz" data-question="98">
+        <h4>Question 98:</h4>
+        <p>What is the probability of getting two black cards from a well shuffled standard deck with replacement?</p>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true, 98)">a) 1/4</li>
+            <li onclick="checkAnswer(this, false, 98)">b) 1/8</li>
+            <li onclick="checkAnswer(this, false, 98)">c) 1/16</li>
+            <li onclick="checkAnswer(this, false, 98)">d) 1/13</li>
+        </ul>
+        <div class="explanation">
+            <strong>Explanation:</strong><br>
+            Total cards = 52
+            Probability of 1st card being a black card = 26/52 = 1/2
+            Probability of 2nd card being a black card = 26/52 = 1/2
+            Total probability = 1/2 * 1/2 = 1/4
+        </div>
+    </div>
+</div>
+   
         
         <!-- Pagination -->
         <nav aria-label="Page navigation example">
@@ -1032,6 +1908,11 @@
                 <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
                 <li class="page-item"><a class="page-link" href="#" data-page="4">4</a></li>
                 <li class="page-item"><a class="page-link" href="#" data-page="5">5</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="6">6</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="7">7</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="8">8</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="9">9</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-page="10">10</a></li>
                 <li class="page-item">
                     <a class="page-link" href="#" data-page="next" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
@@ -1051,7 +1932,7 @@
     <script>
         // Global variables to track quiz progress
         let answeredQuestions = {};
-        let totalQuestions = 51;
+        let totalQuestions = 98;
         let questionsPerPage = 10;
         
         // Toggle sidebar
@@ -1132,7 +2013,7 @@
                 }
             });
              // If all questions on page are answered, move to next page after a short delay
-             if (answeredOnPage === questionsOnPage.length && pageNumber < 6) {
+             if (answeredOnPage === questionsOnPage.length && pageNumber < 10) {
                 setTimeout(() => {
                     showPage(pageNumber + 1);
                     
